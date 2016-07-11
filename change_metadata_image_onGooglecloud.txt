@@ -1,0 +1,25 @@
+//use gsutil for working with object metadata
+-gsutil is a Python application that lets you access Cloud Storage from command line.You can use gsutil to do something: creating and deleting buckets,uploading,downloading,deleting,listing bucket,moving,copying and renaming object,editing object
+
+1:Download and use gsutil 
+LINK: https://cloud.google.com/sdk/docs/
+- The first, you must goto the project page and enable billing
+- And then download Google Cloud SDK
+2:Authenticate to the Cloud Storage service
+
+//But you must connect to Cloud Storage buckets
+https://cloud.google.com/compute/docs/disks/gcs-buckets
+
+*** Use gcloud command-line tool 
+- gcloud compute: command-line tool enables you to easily manage your Google Compute Engine resources in a friendlier format than using the Compute Engine API.
+- Install Google Cloud SDK for ubuntu
+https://cloud.google.com/sdk/docs/#deb
+https://cloud.google.com/sdk/docs/quickstart-linux
+
+*** After install you can you command-line for do some thing
+//create gcloud 
+	gcloud init
+//set metadata for image 
+ -gsutil setmeta -h "Content-Type:image/png"  gs://audio18-68.appspot.com/*.jpg
+//multithread for do it
+gsutil -m setmeta -h "Content-Type:image/png"  gs://audio18-68.appspot.com/*.jpg
