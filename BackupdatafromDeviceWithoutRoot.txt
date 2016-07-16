@@ -1,0 +1,29 @@
+-First backup app data to your PC via USB cable with adb:
+adb backup -f ~/data.ab -noapl app.package.name
+- And then you will get a file  backup , is file.ad
+Use Java Program to pack it to file.tar
+- This is function : 
+public class unab {
+    private static final int BACKUP_HEADER_LENGTH = 24;
+    public static void main(String[] args) throws IOException {
+        InputStream in = new FileInputStream(args[0]);
+        try {
+            OutputStream out = new FileOutputStream(args[0] + ".tar");
+            try {
+                if (in.skip(BACKUP_HEADER_LENGTH) != BACKUP_HEADER_LENGTH) {
+                    throw new IOException("Unexpected end of file while skipping backup header.");
+                }
+                byte[] buffer = new byte[100 * 1024];
+                int count;
+                InputStream zip = new InflaterInputStream(in);
+                while ((count = zip.read(buffer)) > 0) {
+                    out.write(buffer, 0, count);
+                }
+            } finally {
+                out.close();
+            }
+        } finally {
+            in.close();
+        }
+    }
+}
