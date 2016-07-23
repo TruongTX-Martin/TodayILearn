@@ -1,0 +1,26 @@
+// This is guide for save file to folder user can choose in android 
+- URL : http://www.scorchworks.com/Blog/simple-file-dialog-for-android-applications/
+
+1: Create or download file SimpleFileDialog.java form above link and copy to project
+2: In your project, you call it from any class
+//Create FileOpenDialog and register a callback
+				/////////////////////////////////////////////////////////////////////////////////////////////////
+				SimpleFileDialog FileOpenDialog =  new SimpleFileDialog(MainActivity.this, "FileOpen",
+						new SimpleFileDialog.SimpleFileDialogListener()
+				{
+					@Override
+					public void onChosenDir(String chosenDir) 
+					{
+						// The code in this function will be executed when the dialog OK button is pushed 
+						m_chosen = chosenDir;
+						Toast.makeText(MainActivity.this, "Chosen FileOpenDialog File: " + 
+								m_chosen, Toast.LENGTH_LONG).show();
+					}
+				});
+
+				//You can change the default filename using the public variable "Default_File_Name"
+				FileOpenDialog.Default_File_Name = "";
+				FileOpenDialog.chooseFile_or_Dir();
+3: Add permision to you Manifest.xml
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
