@@ -1,0 +1,22 @@
+Có 3 loại ứng dung:
+- Native app
+- Mobile web app
+- Hybrid app 
+1: Native app : là ứng dụng viết riêng cho các nền tảng Android, IOS hay WIndowphone. Mối native app thì chỉ chạy được trên một nền tảng
+không mang sang nền tảng khác để chạy được
+-Điểm mạnh : 
++ về mặt performance : native app chạy nhanh hơn mobiel app trong hầu hết các trường hợp, tuy nhiên một số ứng dụng có sự chênh lệch nhỏ
+có thể chấp nhận được
++ Về mặt tính năng, native app có khả năng truy cập các phần cưng như Camera,GPS , các quyền truy câpj local như danh bạ, đọc ghi file
+Native app có thể khai thác sức mạnh phần cứng nhiều nhất của nền tảng.còn mobile web thì hầu như là không thể, một số trường hợp thì có thể
+đọc file và upload file
+- Điểm yếu: không thể crossplatform, chi phí duy trì,phát triển cao
+2: Mobie web app
+Là ứng dụng chạy trên nền web , được viết băng html, css,javascript-> thực chất nó là website với giao diện app
+- Điểm mạnh : crossplatform, khong cần cài đặt
+- Điểm yếu : chỉ chạy khi online,không mang lại trải nghiệm người dùng tốt như native app
+3: Hybrid app  - ứng dụng lai
+Là ưng dụng keet hợp những ưu điểm của cả mobile web app và native app, theo đó phần cơ bản vẫn viết bằng ngôn ngữ web nhưng được đặt
+trong container native , vẫn cài đặt, vẫn đưa lên chợ 
+
+
